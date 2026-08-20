@@ -5,6 +5,8 @@ using namespace std;
 
 int main(){
 
+    // brute force
+
     string s, t{};
     cin >> s >> t;
 
@@ -28,4 +30,10 @@ int main(){
     } else {
         cout << "NO";
     }
+
+
+
+
+
+
 }

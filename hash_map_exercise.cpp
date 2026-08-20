@@ -27,7 +27,7 @@ int main() {
         count_letters[str[i]]++;
     }
 
-        for (auto it = count_letters.begin(); it != count_letters.end(); it++)
+    for (auto it = count_letters.begin(); it != count_letters.end(); it++)
     {
         cout << it->first << " -> " << it->second << endl;
     }
