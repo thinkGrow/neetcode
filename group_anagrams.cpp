@@ -2,45 +2,43 @@
 #include <vector>
 #include <unordered_map>
 
-
 using namespace std;
 
-int main (){
+int main() {
 
-    vector <string> words = {"act","pots","tops","cat","stop","hat"};
+    vector <string> strs = {"act","pots","tops","cat","stop","hat"};
+    unordered_map<string, vector<string>> maps;
 
-    
-    unordered_map <string, vector<string> > maps;
-    
-    for ( int i = 0; i < words.size(); i++ ){
 
-        int alphabets[26] = {};
-        
-        for ( int j = 0; j < words[i].length(); j++){
+    for ( int i = 0; i < strs.size(); i++){
 
-            alphabets[words[i][j] - 'a']++;        
+        char alphabets[26] = {};
 
+        for (int j = 0; j < strs[i].length(); j++ ){
+            alphabets[ strs[i][j] - 'a' ]++; 
         }
 
-        string key {};
+        string keys = "";
 
-        for(int k = 0 ; k < 26; k++){
-            key += to_string(alphabets[k]) + ',';
+        for(int k = 0; k < 26; k++){
+            keys += to_string(alphabets[k]) + ",";
         }
 
-    maps[key].push_back(words[i]);
+        maps[keys].push_back(strs[i]);
 
     }
 
-    for ( auto it = maps.begin();  it != maps.end(); it++ ){
+    for (auto it = maps.begin(); it != maps.end(); it++){
 
-        for ( int i = 0; i < it->second.size(); i++ ){
+        // cout << it->first << " : " ;
+
+        for ( int i = 0; i < it->second.size(); i++){
             cout << it->second[i] << " ";
-        } 
-        cout << "\n";
-    }
-    
+        }
 
+        cout << "\n";
+
+    }
 
 
     
