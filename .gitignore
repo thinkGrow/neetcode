@@ -1,3 +1,10 @@
 contains_duplicate
 valid_anagram
+
+# compiled executables (files without an extension)
+*
+!*/
+!*.*
+
+# debug symbol bundles
 *.dSYM/
